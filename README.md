@@ -33,6 +33,12 @@ Run docker compose<br>
 or
 <code>docker-compose up -d</code>
 </li>
+<li>
+Once all services are running, for health check execute 
+<code>
+bash <(curl -s https://raw.githubusercontent.com/kkenan/basic-microservices/master/health_check.sh)
+</code>
+</li>
 </ul>
 App Ports:
 <ul>
