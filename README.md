@@ -29,9 +29,9 @@ It is not a practice to commit data for .env, due to this task, the .env fille w
 </li>
 <li>
 Run docker compose<br>
-<code>docker-compose up</code>
-or
-<code>docker-compose up -d</code>
+<code>docker-compose up</code> or <code>docker-compose up -d</code> (if you install standalone docker-compose) OR <br>
+<code>docker compose up</code> or <code>or docker compose up -d</code> (if you install compose plugin) <br>
+- -d flag runs containers in background
 </li>
 <li>
 Once all services are running, for health check execute 
