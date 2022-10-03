@@ -30,6 +30,8 @@ It is not a practice to commit data for .env, due to this task, the .env fille w
 <li>
 Run docker compose<br>
 <code>docker-compose up</code>
+or
+<code>docker-compose up -d</code>
 </li>
 </ul>
 App Ports:
