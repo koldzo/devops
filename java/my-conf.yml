@@ -1,0 +1,10 @@
+# Java context path
+server.servlet.context-path: /java
+
+# URL to node app
+app.node.url: http://node:8081/
+
+spring:
+  jpa:
+    properties.hibernate:
+      temp.use_jdbc_metadata_defaults: false

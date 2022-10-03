@@ -1,0 +1,35 @@
+version: '3.1'
+services:
+  postgresql:
+    container_name: postgres_db
+    image: postgres:10
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB
+      - POSTGRES_USER
+      - POSTGRES_PASSWORD
+    volumes:
+      - psql-data:/var/lib/postgresql/data
+  node:
+    container_name: node_app
+    image: node-app
+    build: ./nodejs
+    ports:
+      - "8081:8081"
+  app:
+    container_name: java_app
+    image: java-app
+    build: ./java
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgresql
+      - node
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgresql:5432/${POSTGRES_DB}
+      - SPRING_DATASOURCE_USERNAME=${POSTGRES_USER}
+      - SPRING_DATASOURCE_PASSWORD=${POSTGRES_PASSWORD}
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+volumes:
+  psql-data:
